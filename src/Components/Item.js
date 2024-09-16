@@ -7,7 +7,7 @@ export default function Item(props) {
                         <tbody style={{borderBottomWidth:"0px"}}>
                         <tr style={{borderBottomWidth:"0px"}}>
                             <td className='dropdown col-30' style={{borderBottomWidth:"0px"}}>
-                                <h5 className="card-title" style={{textAlign:"left"}}>{props.todos.title}</h5>
+                            <h5 className="card-title" style={{ textAlign: "left" }}>{props.ind + 1}). {props.todos.title}</h5>
                                 <p className="card-text">{props.todos.desc}</p>
                             </td>
                             <td className='dropdown col-1' style={{borderBottomWidth:"0px"}}>

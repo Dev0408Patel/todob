@@ -12,14 +12,14 @@ export default function Header(props) {
                   <a className="navbar-brand" href="#">{props.title}</a>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <a className="nav-link active" aria-current="page" href="#">Todo</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="">Google</a>
+          <a className="nav-link" href="">Progress</a>
         </li>
         
         <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a className="nav-link disabled" aria-disabled="true">Completed</a>
         </li>
       </ul>
       <form className="d-flex" role="search">

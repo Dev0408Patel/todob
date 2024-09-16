@@ -9,14 +9,17 @@ export default function Todos(props) {
           backgroundColor: '#D4F1F4',
           height: '80vh',
           display: 'flex',
-          flexDirection: 'column', // Ensure items are aligned in a column
-          alignItems: 'flex-start', // Align items to the left
-          gap: '1rem', // Add some space between items
-          padding: '1rem', // Optional padding for aesthetics
+          flexDirection: 'column', 
+          alignItems: 'flex-start', 
+          gap: '1rem', 
+          padding: '1rem', 
         }} >
-                {props.todos.map((todo) => {
-                    return <Todoitem todos={todo} key={todo.sno} onDelete={props.onDelete} />
-                })}
+          {props.todos.length === 0 ?<p>Nothing to Display...You are all Free</p>:
+            props.todos.map((todo, index) => {
+              return <Todoitem todos={todo} key={index} ind={index} onDelete={props.onDelete} />
+            })}
+            
+          
                 
         </div>
     </>

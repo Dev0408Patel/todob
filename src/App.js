@@ -1,16 +1,13 @@
 
 import './App.css';
 import Header from './Components/Header';
-import Todos from './Components/Todos'
+import Todos from './Components/Todos';
+import { useState } from 'react';
+import Footer from './Components/Footer';
 
 function App() {
 
-  const onDelete = (todo) => {
-    console.log("this is", todo);
-  };
-
-  let tods = [
-    {
+  const [tods, setTods] = useState([{
       sno: 1,
       title: "FirstItem",
       desc: "ukjnhika ajilsfnn LKN SNC JN snn CJKA J lk<m sc.KM ",
@@ -27,13 +24,18 @@ function App() {
       title: "ThirdItem",
       desc: "kjughboil hyhakbjf ioslhnlhka ioanvilzkn nikzlnf;oalk klnzk.v .,kln;kmvdzk",
       detailed: "tere jaise yaar kahan , kahan esa yaaraana, yaad karegi duniya tera mera hafsana"   
-    }
-  ]
+    }])
+
+  const onDelete = (todo) => {
+    setTods(tods.filter(x=>x!==todo));
+  };
+
 
   return (
     <div className="App">
       <Header title="Things To Do" />
       <Todos todos={tods} onDelete={onDelete} />
+      <Footer/>
     </div>
   );
 }
