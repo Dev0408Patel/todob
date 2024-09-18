@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Todoitem from './Todoitem'
 import Button from './Button';
+import InsertForm from './InsertForm';
 
 export default function Todos(props) {
+
+  const [flag, setFlag] = useState(false);
+  const [BVissible, setBVissible] = useState(true)
+
+  const changeFlag = () => { setFlag(!flag); setBVissible(!BVissible)};
+
     return (
         <>
         {/* <h1>Todo </h1><Button/> */}
@@ -11,10 +18,10 @@ export default function Todos(props) {
             <div style={{ flex: 1, textAlign: "center" }}>
               <a className="navbar-brand" style={{ fontSize: "2em", fontWeight:"bold" }}>Todo</a>
             </div>
-            <Button/>
+            {BVissible && <Button onClick={changeFlag} />}
           </div>
         </nav>
-        <div className="container shadow p-3 mb-5 bg-body-tertiary rounded" style={{
+        {flag ? <InsertForm onClick={changeFlag} onInsert={ props.onInsert} />: <div className="container shadow p-3 mb-5 bg-body-tertiary rounded" style={{
           backgroundColor: '#D4F1F4',
           height: '80vh',
           display: 'flex',
@@ -30,7 +37,8 @@ export default function Todos(props) {
             
           
                 
-        </div>
+        </div>}
+        
     </>
   )
 }

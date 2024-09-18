@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Button() {
+export default function Button(props) {
 const button={
     color: "#000000",
 	backgroundColor: "#36b044",
@@ -13,7 +13,7 @@ const button={
 
   return (
     <div>
-	<button type="button" style={button} name="myButton" autofocus>Add</button>
+	<button type="button" style={button} name="myButton" autofocus onClick={props.onClick}>Add</button>
 </div>
   )
 }
