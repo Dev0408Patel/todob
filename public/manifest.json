@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ToDo App",
+  "name": "Todo App By Dev Patel",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "../src/Static_Files/Guy_in_Watch_AI_Generated_Logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "../src/Static_Files/Guy_in_Watch_AI_Generated_Logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "../src/Static_Files/Guy_in_Watch_AI_Generated_Logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
