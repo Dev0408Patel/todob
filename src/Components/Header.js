@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
 export default function Header(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -13,14 +14,14 @@ export default function Header(props) {
                   <a className="navbar-brand" href="#">{props.title}</a>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item mx-3">
-          <Link to="/">Todo </Link>
+          <Link style={{color:"black"}} to="/">Todo </Link>
         </li>
         <li className="nav-item mx-3">
-          <Link to="/progress">Progress </Link>
+          <Link style={{color:"black"}} to="/progress">Progress </Link>
         </li>
         
         <li className="nav-item mx-3">
-          <Link to="/completed">Completed</Link>
+          <Link style={{color:"black"}} to="/completed">Completed</Link>
         </li>
       </ul>
       <form className="d-flex" role="search">

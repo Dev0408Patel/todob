@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Footer from './Components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Progress from './Components/Progress';
+import InsertForm from './Components/InsertForm';
 
 function App() {
 
@@ -54,7 +55,8 @@ function App() {
         <Header title="Things To Do" />
         <Routes>
           <Route path='/' element={<Todos todos={tods} onDelete={onDelete} onProgress={ onProgress} />}/>
-          <Route path='/progress' element={<Progress todos={pods} onPDelete={onPDelete} />}/>
+          <Route path='/progress' element={<Progress todos={pods} onPDelete={onPDelete} />} />
+          <Route path='/insert' element={<InsertForm />}/>
         </Routes>
       <Footer/>
     </div>
