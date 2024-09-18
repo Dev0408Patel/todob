@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function Header(props) {
   return (
@@ -11,15 +12,15 @@ export default function Header(props) {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                   <a className="navbar-brand" href="#">{props.title}</a>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Todo</a>
+        <li className="nav-item mx-3">
+          <Link to="/">Todo </Link>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="">Progress</a>
+        <li className="nav-item mx-3">
+          <Link to="/progress">Progress </Link>
         </li>
         
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Completed</a>
+        <li className="nav-item mx-3">
+          <Link to="/completed">Completed</Link>
         </li>
       </ul>
       <form className="d-flex" role="search">

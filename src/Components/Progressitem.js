@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-export default function Todoitem(props) {
+export default function Progressitem(props) {
 
     const style1 = {
         display: "inline",
@@ -25,11 +25,9 @@ export default function Todoitem(props) {
                                 <td className='col-3' style={style1}>
                                     <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-success" >Done</a>
                                 </td>
-                                <td className='col-3' style={style1}>
-                                        <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-secondary" onClick={() => { props.onProgress(props.todos); props.onDelete(props.todos); }}>Progress</a>
-                                </td>
+                               
                                 <td className='col-1' style={style1}>
-                                    <a href="#" style={{ marginTop: 'auto', alignSelf: 'revert' }} className="btn btn-danger" onClick={() => { props.onDelete(props.todos) }}>X</a>
+                                    <a href="#" style={{ marginTop: 'auto', alignSelf: 'revert' }} className="btn btn-danger" onClick={() => { props.onPDelete(props.todos) }}>X</a>
                                 </td>
                                 </tr>
                                 </tbody>

@@ -4,6 +4,8 @@ import Header from './Components/Header';
 import Todos from './Components/Todos';
 import { useState } from 'react';
 import Footer from './Components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Progress from './Components/Progress';
 
 function App() {
 
@@ -25,18 +27,38 @@ function App() {
       desc: "kjughboil hyhakbjf ioslhnlhka ioanvilzkn nikzlnf;oalk klnzk.v .,kln;kmvdzk",
       detailed: "tere jaise yaar kahan , kahan esa yaaraana, yaad karegi duniya tera mera hafsana"   
     }])
+  
+  const [pods, setPods] = useState([]);
+  const [cods, setCods] = useState([]);
 
   const onDelete = (todo) => {
-    setTods(tods.filter(x=>x!==todo));
+    setTods(tods.filter(x => x !== todo));
   };
+
+  const onPDelete = (todo) => {
+    setPods(pods.filter(x => x !== todo));
+  };
+ 
+
+  const onProgress = (prog) => {
+    setPods(() => {
+        const updatedPods = [...pods, prog];
+        return updatedPods; 
+    });
+};
 
 
   return (
+    <Router>
     <div className="App">
-      <Header title="Things To Do" />
-      <Todos todos={tods} onDelete={onDelete} />
+        <Header title="Things To Do" />
+        <Routes>
+          <Route path='/' element={<Todos todos={tods} onDelete={onDelete} onProgress={ onProgress} />}/>
+          <Route path='/progress' element={<Progress todos={pods} onPDelete={onPDelete} />}/>
+        </Routes>
       <Footer/>
     </div>
+    </Router>
   );
 }
 
