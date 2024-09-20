@@ -1,16 +1,18 @@
 import React from 'react'
-import Item from './Item'
+import Item from './Item';
 
-export default function Progressitem(props) {
+export default function CompletedItem(props) {
 
+    const currentDateandTime = new Date();
     const style1 = {
         display: "inline",
         alignItems: "flex-end",
-        alignSelf:"flex-end"
+        
     };
 
-    return (
-        < >
+
+  return (
+    < >
         
             <div className="card " style={{width:"100%"}}>
                 
@@ -22,12 +24,8 @@ export default function Progressitem(props) {
                             <thead></thead>
                             <tbody>
                             <tr>
-                                <td className='col-3' style={style1}>
-                                        <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-success" onClick={() => {props.onDone(props.todos); props.onPDelete(props.todos) }} >Done</a>
-                                </td>
-                               
                                 <td className='col-1' style={style1}>
-                                    <a href="#" style={{ marginTop: 'auto', alignSelf: 'revert' }} className="btn btn-danger" onClick={() => { props.onPDelete(props.todos) }}>X</a>
+                                    {}
                                 </td>
                                 </tr>
                                 </tbody>

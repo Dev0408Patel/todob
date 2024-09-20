@@ -23,7 +23,7 @@ export default function Todoitem(props) {
                             <tbody>
                             <tr>
                                 <td className='col-3' style={style1}>
-                                    <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-success" >Done</a>
+                                        <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-success" onClick={() => { props.onDone(props.todos); props.onDelete(props.todos); }}>Done</a>
                                 </td>
                                 <td className='col-3' style={style1}>
                                         <a href="#" style={{ marginTop: 'auto', alignSelf: 'flex-end' }} className="btn btn-secondary" onClick={() => { props.onProgress(props.todos); props.onDelete(props.todos); }}>Progress</a>

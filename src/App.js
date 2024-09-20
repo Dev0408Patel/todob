@@ -7,6 +7,7 @@ import Footer from './Components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Progress from './Components/Progress';
 import InsertForm from './Components/InsertForm';
+import Completed from './Components/Completed'
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     }])
   
   const [pods, setPods] = useState([]);
-  // const [cods, setCods] = useState([]);
+  const [cods, setCods] = useState([]);
 
   const onDelete = (todo) => {
     setTods(tods.filter(x => x !== todo));
@@ -38,6 +39,10 @@ function App() {
 
   const onPDelete = (todo) => {
     setPods(pods.filter(x => x !== todo));
+  };
+
+  const onCDelete = (todo) => {
+    setPods(cods.filter(x => x !== todo));
   };
  
 
@@ -53,14 +58,20 @@ function App() {
     console.log(tods);
   }
 
+  const done = (data) => {
+    setCods([...cods, data]);
+    console.log(cods);
+  }
+
 
   return (
     <Router>
     <div className="App">
         <Header title="Things To Do" />
         <Routes>
-          <Route path='/' element={<Todos todos={tods} onDelete={onDelete} onProgress={onProgress} onInsert={ onInsert} />}/>
-          <Route path='/progress' element={<Progress todos={pods} onPDelete={onPDelete} />} />
+          <Route path='/' element={<Todos todos={tods} onDelete={onDelete} onProgress={onProgress} onInsert={onInsert} onDone={done } />}/>
+          <Route path='/progress' element={<Progress todos={pods} onPDelete={onPDelete} onDone={done }/>} />
+          <Route path='/completed' element={<Completed todos={cods} onCDelete={onCDelete} />} />
           {/* <Route path='/insert' element={<InsertForm onInsert={ onInsert} />}/> */}
         </Routes>
       <Footer/>
